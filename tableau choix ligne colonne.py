@@ -30,8 +30,8 @@ for j in range(0, int(nombredeligne)):
 for j in range(0, int(nombredeligne)):
     print(testta[j])
 
-testta[1][1]=input("change la premiere valeur de ton tableau")
-print(testta[1][1])
+testta[0][0]=input("change la premiere valeur de ton tableau")
+print(testta[0][0])
 for j in range(0, int(nombredeligne)):
     tampon=[]
     for i in range(int(nombredecolonne)):
@@ -39,3 +39,26 @@ for j in range(0, int(nombredeligne)):
     testta.append(tampon)
 for j in range(0, int(nombredeligne)):
     print(testta[j])
+
+a=input("change la ligne de la case à changer")
+testta[int(a)-1][0]=input("change sa valeur")
+print(testta[int(a)][0])
+for j in range(0, int(nombredeligne)):
+    tampon=[]
+    for i in range(int(nombredecolonne)):
+        tampon.append("_")
+    testta.append(tampon)
+for j in range(0, int(nombredeligne)):
+    print(testta[j])
+    
+b=input("et maintenant sa colonne")
+testta[int(a)-1][int(b)-1]=input("change sa valeur")
+print(testta[int(a)][int(b)])
+for j in range(0, int(nombredeligne)):
+    tampon=[]
+    for i in range(int(nombredecolonne)):
+        tampon.append("_")
+    testta.append(tampon)
+for j in range(0, int(nombredeligne)):
+    print(testta[j])
+
