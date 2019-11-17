@@ -30,3 +30,12 @@ for j in range(0, int(nombredeligne)):
 for j in range(0, int(nombredeligne)):
     print(testta[j])
 
+testta[1][1]=input("change la premiere valeur de ton tableau")
+print(testta[1][1])
+for j in range(0, int(nombredeligne)):
+    tampon=[]
+    for i in range(int(nombredecolonne)):
+        tampon.append("_")
+    testta.append(tampon)
+for j in range(0, int(nombredeligne)):
+    print(testta[j])
