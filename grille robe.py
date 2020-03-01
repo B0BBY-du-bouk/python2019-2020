@@ -2,8 +2,9 @@ from tkinter import*
 
 master = Tk()
 
-cani = Canvas(master, width=1000, height=1000)
+cani = Canvas(master, width=1000, height=1000,bg='grey80')
 cani.pack()
+cani.create_rectangle(100,100,900,900,fill='grey60')
 
 for j in range (1, 10):
     cani.create_line(100*j,100,100*j,900)
@@ -24,3 +25,6 @@ testta[3][3]=2
 
 for j in range(0,9):
     print(testta[j])
+
+cani.create_oval(250,250,350,350,fill='black')
+cani.create_oval(350,350,450,450,fill='white')
