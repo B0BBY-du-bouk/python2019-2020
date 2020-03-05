@@ -14,6 +14,14 @@ def creertableau(tab):
     #for j in range(0,9):
         #print(tableau[j])
 
+def affichagepions():
+    for j in range (0,9):
+        for i in range (0,9):
+            if tableau[j][i]>0:
+                if tableau[j][i]==2:
+                    cani.create_oval((j*100+50),(j*100+50),(j*100+150),(j*100+150),fill='white')
+                else:
+                    cani.create_oval((j*100+50),(j*100+50),(j*100+150),(j*100+150),fill='black')
 
 tableau=[]
 master = Tk()
