@@ -26,14 +26,14 @@ def affichagepions():
 def callback(event):
     print("clicked at", event.x, event.y)
     remplirtableaudist2(tableaudist,event)
-
+    
 def remplirtableaudist2(tab,event):
     for j in range(0,9):
         for i in range(0,9):
-            tab[j][i]=((event.x*event.x)+(event.y*event.y))
+            tab[j][i]=((event.x-(j*100)*event.x-(j*100))+(event.y-(i*100)*event.y-(i*100)))
     for j in range(0,9):
         print(tab[j])
-
+    
 
 
 tableau=[]
