@@ -23,7 +23,11 @@ def affichagepions():
                 else:
                     cani.create_oval((j*100+50),(j*100+50),(j*100+150),(j*100+150),fill='black')
 
+def callback(event):
+    print("clicked at", event.x, event.y)
+
 tableau=[]
+tableaudist=[]
 master = Tk()
 
 cani = Canvas(master, width=1000, height=1000,bg='grey80')
@@ -31,21 +35,17 @@ cani.pack()
 cani.create_rectangle(100,100,900,900,fill='grey60')
 
 afficheGrille(cani)
-
+creertableau(tableaudist)
 creertableau(tableau)
 tableau[2][2]=1
 tableau[3][3]=2
 tableau[4][4]=2
-
-#for j in range(0,9):
-    #print(tableau[j])
-def affichagepions():
-    for j in range (0,9):
-        for i in range (0,9):
-            if tableau[j][i]>0:
-                if tableau[j][i]==2:
-                    cani.create_oval((j*100+50),(j*100+50),(j*100+150),(j*100+150),fill='white')
-                else:
-                    cani.create_oval((j*100+50),(j*100+50),(j*100+150),(j*100+150),fill='black')
           
 affichagepions()
+
+cani.bind("<Button-1>", callback)
+
+print(tableaudist)
+#for j in range (0,9):
+    #for i in range (0,9):
+
