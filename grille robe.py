@@ -19,22 +19,27 @@ def affichagepions():
         for i in range (0,9):
             if tableau[j][i]>0:
                 if tableau[j][i]==2:
-                    cani.create_oval((j*100+50),(j*100+50),(j*100+150),(j*100+150),fill='white')
+                    cani.create_oval((j*100+50),(i*100+50),(j*100+150),(i*100+150),fill='white')
                 else:
-                    cani.create_oval((j*100+50),(j*100+50),(j*100+150),(j*100+150),fill='black')
+                    cani.create_oval((j*100+50),(i*100+50),(j*100+150),(i*100+150),fill='black')
 
 def callback(event):
     print("clicked at", event.x, event.y)
     remplirtableaudist2(tableaudist,event)
+    zemin = min(list(map(min, tableaudist)))
+    print(zemin)
     
 def remplirtableaudist2(tab,event):
     for j in range(0,9):
         for i in range(0,9):
-            tab[j][i]=((event.x-(j*100)*event.x-(j*100))+(event.y-(i*100)*event.y-(i*100)))
+            tab[j][i]=(((event.x-(100+(j*100)))*(event.x-(100+(j*100))))+((event.y-(100+(i*100)))*(event.y-(100+(i*100)))))
     for j in range(0,9):
         print(tab[j])
     
-
+#def valmin ():
+ #   for j in range(0,9):
+  #      for i in range(0,9):
+            
 
 tableau=[]
 tableaudist=[]
@@ -47,9 +52,9 @@ cani.create_rectangle(100,100,900,900,fill='grey60')
 afficheGrille(cani)
 creertableau(tableaudist)
 creertableau(tableau)
-tableau[2][2]=1
-tableau[3][3]=2
-tableau[4][4]=2
+tableau[1][2]=1
+tableau[3][2]=2
+tableau[3][8]=2
           
 affichagepions()
 
