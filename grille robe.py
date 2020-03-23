@@ -28,6 +28,12 @@ def callback(event):
     remplirtableaudist2(tableaudist,event)
     zemin = min(list(map(min, tableaudist)))
     print(zemin)
+    lignemin = list(map(min, tableaudist)).index(zemin)
+    print(lignemin)
+    colonnemin = tableaudist[lignemin].index(zemin)
+    print(colonnemin)
+    tableau[lignemin][colonnemin]=((tableau[lignemin][colonnemin])+1)
+    affichagepions()
     
 def remplirtableaudist2(tab,event):
     for j in range(0,9):
