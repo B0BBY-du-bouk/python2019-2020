@@ -33,6 +33,8 @@ def callback(event):
     colonnemin = tableaudist[lignemin].index(zemin)
     print(colonnemin)
     tableau[lignemin][colonnemin]=((tableau[lignemin][colonnemin])+1)
+    if tableau[lignemin][colonnemin]>2:
+        tableau[lignemin][colonnemin]=0
     affichagepions()
     
 def remplirtableaudist2(tab,event):
