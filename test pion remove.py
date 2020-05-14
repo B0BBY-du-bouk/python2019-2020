@@ -24,7 +24,6 @@ def affichagepions(): #la fonction qui place les points sur la grille, ce sont d
                 else:
                     tableaugraphique[j][i]==cani.create_oval((j*100+50),(i*100+50),(j*100+150),(i*100+150),fill='black')
     
-
         
 def remplirtableaudist2(tab,event): #fonction pour remplir le tableau des distances par rapport aux clics
     for j in range(0,9):
