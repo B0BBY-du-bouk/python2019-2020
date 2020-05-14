@@ -20,10 +20,10 @@ def affichagepions(): #la fonction qui place les points sur la grille, ce sont d
         for i in range (0,9):
             if tableau[j][i]>0:
                 if tableau[j][i]==2:
-                    tableaugraphique[j][i]==cani.create_oval((j*100+50),(i*100+50),(j*100+150),(i*100+150),fill='white')
+                    tableaugraphique[j][i]=cani.create_oval((j*100+50),(i*100+50),(j*100+150),(i*100+150),fill='white')
                 else:
-                    tableaugraphique[j][i]==cani.create_oval((j*100+50),(i*100+50),(j*100+150),(i*100+150),fill='black')
-    
+                    tableaugraphique[j][i]=cani.create_oval((j*100+50),(i*100+50),(j*100+150),(i*100+150),fill='black')
+            
         
 def remplirtableaudist2(tab,event): #fonction pour remplir le tableau des distances par rapport aux clics
     for j in range(0,9):
@@ -40,10 +40,11 @@ def trouvervaleurmin ():#trouve la valeur min du tableau des distances puis l'as
     colonnemin = tableaudist[lignemin].index(zemin) #puis la colonne
     #print(colonnemin)
     tableau[lignemin][colonnemin]=((tableau[lignemin][colonnemin])+1) #j'ajoute 1 à la valeur de la case pour changer la valeur du pion
+    cani.delete(tableaugraphique[lignemin][colonnemin])
     if tableau[lignemin][colonnemin]>2: #je remet le conteur de la case à 0 (vide) au cas ou elle est supèrieur à 2 (blanc)
         tableau[lignemin][colonnemin]=0
         tableaugraphique[lignemin][colonnemin]=0
-        tableaugraphique[lignemin][colonnemin].destroy()
+        cani.delete(tableaugraphique[lignemin][colonnemin])
         
 def callback(event): #je programme l'action qui doit être prise à chaque clic
     #print("clicked at", event.x, event.y)
